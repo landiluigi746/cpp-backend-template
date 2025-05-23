@@ -21,10 +21,16 @@ Example:
 
 ```bash
 PORT=8000
-BUILD_TYPE=Release # options are Debug, Release, RelWithDebInfo and MinSizeRel 
+BUILD_TYPE=Release # options are Debug, Release, RelWithDebInfo and MinSizeRel
 ```
 
-Finally, start the docker container with docker compose:
+To prepare the local environment, run the following commands:
+```bash
+vcpkg install
+cmake -S . -B build
+```
+
+Then, to start the docker container with docker compose:
 ```bash
 docker compose up --build -d
 ```
