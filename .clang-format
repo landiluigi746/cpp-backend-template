@@ -5,12 +5,15 @@ BasedOnStyle: Microsoft
 IndentWidth: 4
 TabWidth: 4
 UseTab: Never
+AllowShortCaseExpressionOnASingleLine: true
 AllowShortLambdasOnASingleLine: Empty
 AllowShortBlocksOnASingleLine: Empty
 AllowShortFunctionsOnASingleLine: Empty
 AllowShortIfStatementsOnASingleLine: Never
+BreakTemplateDeclarations: Yes
 SpaceBeforeParens: ControlStatements
 SpaceAfterCStyleCast: true
+SpaceAfterTemplateKeyword: false
 SpacesInParentheses: false
 SpacesInAngles: false
 SpaceBeforeSquareBrackets: false
@@ -32,3 +35,5 @@ PointerAlignment: Left
 AlignTrailingComments: true
 MaxEmptyLinesToKeep: 1
 NamespaceIndentation: All
+IndentCaseLabels: true
+AccessModifierOffset: -4
