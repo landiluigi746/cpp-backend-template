@@ -10,9 +10,9 @@ RUN vcpkg install
 
 COPY . .
 
-RUN cmake -S . -B build \
+RUN cmake -S . -B build -G "Ninja" \
     -DCMAKE_BUILD_TYPE=${BUILD_TYPE} \
-    -DCMAKE_TOOLCHAIN_FILE=$VCPKG_ROOT/scripts/buildsystems/vcpkg.cmake
+    -DCMAKE_TOOLCHAIN_FILE=${VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake
 
 RUN cmake --build build --parallel $(nproc)
 
