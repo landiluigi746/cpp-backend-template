@@ -10,27 +10,30 @@ To use this template you need:
 - a C++ compiler (C++23 is used by default, edit [CMake config](CMakeLists.txt) if you want to use a different standard)
 - CMake (3.14.0 >=)
 - vcpkg
-- Docker
+- Docker and Docker compose
 - clang-format (optional, used to format code)
 
 ## Getting started
 
 To get started with this template, either clone it or generate a new repo from this one.
-Then, create a ```.env``` file with env variables.
-Example:
+Then, create a ```.env``` file with env variables (see an example configuration [here](.env.sample)).
 
+To prepare the local environment, run the following command:
 ```bash
-PORT=8000
-BUILD_TYPE=Release # options are Debug, Release, RelWithDebInfo and MinSizeRel
+make devenv
 ```
 
-To prepare the local environment, run the following commands:
+Then, to start all containers with docker compose:
 ```bash
-vcpkg install
-cmake -S . -B build
+make up
 ```
 
-Then, to start the docker container with docker compose:
+To stop all containers with docker compose:
 ```bash
-docker compose up --build -d
+make down
+```
+
+To see logs from the container:
+```bash
+make logs
 ```
