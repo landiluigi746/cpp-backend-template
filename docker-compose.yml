@@ -1,5 +1,6 @@
 services:
   cpp-backend-template:
+    container_name: cpp-backend-template
     build:
       context: .
     restart: unless-stopped
