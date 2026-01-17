@@ -3,9 +3,10 @@ services:
     container_name: cpp-backend-template
     build:
       context: .
+      args:
+        BUILD_TYPE: ${BUILD_TYPE}
     restart: unless-stopped
     ports:
-      - "${PORT}:${PORT}"
+      - ${PORT}:${PORT}
     environment:
-      - PORT=${PORT}
-      - BUILD_TYPE=${BUILD_TYPE}
+      PORT: ${PORT}
