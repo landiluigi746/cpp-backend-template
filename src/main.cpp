@@ -1,17 +1,19 @@
-#include "Config.hpp"
+#include "app/App.hpp"
 
-#include <crow.h>
+#include <cstdlib>
+#include <print>
 
 int main()
 {
-    crow::SimpleApp app;
+    App app;
 
-    CROW_ROUTE(app, "/")
-    ([] {
-        return "Hello world!";
-    });
+    if (auto res = app.Init(); !res)
+    {
+        std::println("Fatal error during initialization: {}", res.error().message);
+        return EXIT_FAILURE;
+    }
 
-    app.port(Config::PORT).multithreaded().run();
+    app.Run();
 
-    return 0;
+    return EXIT_SUCCESS;
 }
