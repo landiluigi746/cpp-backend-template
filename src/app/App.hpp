@@ -1,5 +1,6 @@
 #pragma once
 
+#include "middlewares/JsonRequest.hpp"
 #include "utils/Utils.hpp"
 
 #include <crow/app.h>
@@ -14,5 +15,5 @@ private:
     void SetupRoutes();
 
 private:
-    crow::SimpleApp m_App;
+    crow::App<JsonRequest> m_App;
 };
